@@ -28,5 +28,21 @@ print(message.lower()) # all lowercase
 print(message.upper()) # all uppercase
 print(message.count('a')) # count number of occurrences of letter, if doesnt exist will return -1 same as Java
 
+message = message.replace('World','Certificate') # replace method 1st arg word to be replaced, 2nd arg new word
+# does not make replacement in place but returns a new string
+print(message)
+
+# string concantination
+greeting = "Hello"
+name = "Peter!"
+message = greeting  + name   # concantination is same as Java
+print(message)
+
+# formatted string
+message = '{}, {}. Welcome!'.format(greeting,name) # number of variables in string = number of arguements in format()
+print(message)
+
+
+
 
 

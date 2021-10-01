@@ -42,7 +42,14 @@ print(message)
 message = '{}, {}. Welcome!'.format(greeting,name) # number of variables in string = number of arguements in format()
 print(message)
 
+# f strings 
+# avai;able only if version >=3.6
+message = f'{greeting.upper()}, {name}. Welcome!'
+print(message)
 
+# trick in python
+print(dir(name)) # methods that are applicable to variable
 
+print(help(str)) # methods associated with class
 
 

@@ -25,3 +25,18 @@ print(my_list[-1:-3]) #if start point > end point, prints empty list does not th
 #negative step applicable 
 print(my_list[0:-1:2] ) #start from 0th index skip 2 numbers after every one number and print 
 
+
+#slicing on strings 
+my_string = 'https://www.makarandpundlik.com'
+
+#to reverse the string 
+print(my_string[::-1])
+
+#get top level domain 
+print(my_string[-4:])
+
+#print without http://
+print(my_string[8:])
+
+#without domain and https
+print(my_string[8:-4]) #combination of positive and negative 

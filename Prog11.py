@@ -65,3 +65,45 @@ my_list = {}
 for name,hero in zip(names,heros):
     my_list[name] = hero
 print(my_list)    
+
+#using comprehensions 
+my_dict = {name:hero for name,hero in zip(names,heros)}
+print(my_dict)
+
+#if name is not peter
+my_dict = {name:hero for name,hero in zip(names,heros) if name!='peter'}
+print(my_dict)
+
+
+
+
+#set comprehensions 
+nums = [1,2,4,5,2,1,3,5,7,5,6,8,5,3,3,2]
+
+my_set =  set()
+for i in nums:
+    my_set.add(i)
+print(my_set)
+
+#using comprehension
+my_set = {n for n in nums}
+print(my_set)
+
+
+#generator example 
+#Python provides a generator to create your own iterator function. 
+# A generator is a special type of function which does not return a single value, instead, 
+# it returns an iterator object with a sequence of values. 
+# In a generator function, a yield statement is used rather than a return statement.
+
+#i want n*n for each n in nums 
+def gen_func(nums):
+    for n in nums:
+        yield n*n 
+my_gen = gen_func(nums)
+
+#using comprehension 
+my_gen = (n*n for n in nums)
+
+for i in my_gen:
+    print(i)

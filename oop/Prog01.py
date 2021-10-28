@@ -7,6 +7,7 @@ class Employee:
         self.pay = pay
         self.email = first+'.'+last+'@gmail.com'
 
+    #if self is forgotten, throws an error 
     def fullname(self):#each method in class will take self(this object) as argument
         return '{} {}'.format(self.first,self.last)
 # e1 = Employee()
@@ -18,4 +19,8 @@ e1 = Employee('Makarand','Pundlik',50000) #self is taken care of by compiler
 e2 = Employee('Tanmay','Pardeshi',60000)
 
 print('{} {}'.format(e1.first,e1.last))
-print(e1.fullname())
+print(e1.fullname()) #this will call Employee.fullname(e1) in background
+
+
+#all instance methods can be called from class reference by passing object as an argument 
+print(Employee.fullname(e2))

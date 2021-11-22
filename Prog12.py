@@ -37,3 +37,40 @@ print('Sorted dictionary\t',s_dict) #sorts only keys in key-value pair
 li = [-6,4,-5,0,3,5,-1]
 s_li = sorted(li,key=abs) #abs will call absolute function internally
 print('Sorting according to absolute values\t',s_li)
+
+
+class Employee():
+    def __init__(self,name,age,salary) -> None:
+        self.name = name
+        self.age = age
+        self.salary = salary
+
+
+    def __repr__(self) -> str:
+        return '({},{},{})'.format(self.name,self.age,self.salary)    
+
+
+
+e1 = Employee('makarand',22,50000)
+e2 = Employee('tanmay',22,70000)
+e3 = Employee('siddhesh',22,65000)
+
+
+
+#user defined function to sort employees
+def e_sort(emp):
+    return emp.name
+
+employees = [e1,e2,e3]
+s_employees = sorted(employees,key=e_sort,reverse=True)  #TypeError: '<' not supported between instances of 'Employee' and 'Employee'
+
+#using lambda function
+s_employees = sorted(employees,key=lambda e:e.salary)
+
+#using attrgetter
+from operator import attrgetter
+
+s_employees = sorted(employees,key=attrgetter('name'))
+
+print(employees,"\n",s_employees)
+
